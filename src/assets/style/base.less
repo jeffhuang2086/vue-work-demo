@@ -1,0 +1,294 @@
+@import "variable.less";
+
+body, html {
+  line-height: 1;
+  font-family: 'PingFangSC-Regular', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background: @color-bg;
+  color: @color-text;
+  font-size: @font-size-medium;
+  box-sizing: border-box;
+  height: 100%;
+  * {
+    box-sizing: inherit;
+  }
+
+  // 覆盖element
+  .el-button {
+    width: 60px;
+    height: 32px;
+    padding: 0;
+    font-size: @font-size-small;
+    text-align: center;
+  }
+
+  .el-button.search-btn {
+    color: #fff;
+    background: @color-theme;
+    &:hover {
+      color: #fff;
+    }
+    &.is-disabled, &.is-disabled:focus, &.is-disabled:hover {
+      background: #C1C4C9;
+    }
+    span {
+      font-weight: 100;
+    }
+  }
+
+  .el-table {
+    .cell {
+      font-size: 12px;
+    }
+  }
+
+  // common
+  .split-line {
+    position: relative;
+    border-right: 1px solid #ECECEE;
+    &::after {
+      position: absolute;
+      right: -13px;
+      top: 50%;
+      transform: translateY(-50%);
+      content: '';
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-left-color: #D8D8D8;
+    }
+  }
+
+  // components
+  .card {
+    &:hover {
+      .button {
+        span {
+          color: #fff;
+        }
+      }
+    }
+    .button {
+        span {
+          color: @color-theme;
+        }
+      }
+  }
+
+  .detail {
+    .steps {
+      .el-step__title {
+        font-size: @font-size-medium;
+        &.is-finish {
+          color: @color-text;
+        }
+        &.is-process {
+          color: @color-text;
+          font-weight: normal;
+        }
+      }
+      .el-step__icon.is-text {
+        width: 42px;
+        height: 42px;
+        border: none;
+      }
+      .el-step__head.is-finish {
+        color: @color-theme;
+        border-color: @color-theme;
+        .el-step__line-inner {
+          border-width: 2px !important;
+        }
+      }
+      .el-step.is-horizontal .el-step__line {
+        top: 20px;
+        height: 4px;
+        background: #F2F3F7;
+      }
+    }
+    .el-form-item {
+      margin-bottom: 0;
+      // 职业的check修改 目前暂时用不上
+      // &:nth-of-type(4) {
+      //   .el-form-item__content {
+      //     flex-wrap: wrap;
+      //     height: auto;
+      //     .el-checkbox-group {
+      //       flex: 0 0 100%;
+      //       height: 52px;
+      //       line-height: 1;
+      //       .el-checkbox {
+      //         line-height: 26px;
+      //         &:last-child {
+      //           margin-left: 0;
+      //         }
+      //       }
+      //     }
+      //     .el-form-item__error {
+      //       position: absolute;
+      //       top: 34px;
+      //       left: 70px;
+      //       padding: 0 0 0 30px;
+      //     }
+      //   }
+      // }
+      .el-form-item__label {
+        height: 26px;
+        line-height: 26px;
+        font-size: @font-size-small;
+        color: #727991;
+        &::before {
+          content: '';
+          margin-right: 0;
+        }
+      }
+      .el-form-item__content {
+        display: flex;
+        align-items: center;
+        height: 26px;
+        line-height: 26px;
+        .el-checkbox-group {
+          height: 26px;
+        }
+        .el-form-item__error {
+          position: static;
+          padding: 0 0 0 30px;
+        }
+      }
+    }
+    .el-radio-button__orig-radio:checked+.el-radio-button__inner {
+      color: @color-theme;
+      background-color: #fff;
+      border-color: @color-theme;
+    }
+    .el-radio-button__inner {
+      width: 60px;
+      height: 32px;
+      padding: 0;
+      line-height: 32px;
+      font-size: @font-size-small;
+    }
+    .el-checkbox {
+      & + .el-checkbox {
+        margin-left: 14px;
+      }
+      .el-checkbox__label {
+        padding-left: 6px;
+        font-size: @font-size-small;
+        color: #727991;
+      }
+      .el-checkbox__inner {
+        width: 12px;
+        height: 12px;
+        &::after {
+          left: 3px;
+          top: 0;
+        }
+      }
+    }
+    .el-button {
+      width: 60px;
+      height: 32px;
+      padding: 0;
+      font-size: @font-size-small;
+      color: #fff;
+      text-align: center;
+      &:hover {
+        color: #fff;
+      }
+      span {
+        font-weight: 100;
+      }
+    }
+  }
+
+  .download-center {
+    .button {
+      width: 60px;
+      height: 24px;
+      padding: 0;
+      background: transparent;
+      border: 1px solid #D8DCE5;
+      transition: .3s ease;
+      &:hover {
+        border-color: @color-theme;
+        span {
+          color: @color-theme;
+        }
+      }
+      span {
+        font-size: @font-size-small;
+        color: #9DA6B4;
+      }
+    }
+  }
+
+  .user-portrait-wrapper{
+    .el-radio-button__orig-radio:checked+.el-radio-button__inner {
+      color: @color-theme;
+      background: #fff;
+      border-color: @color-theme;
+    }
+    .el-radio-button--mini .el-radio-button__inner {
+      padding: 0;
+      width: 62px;
+      height: 26px;
+      line-height: 26px;
+    }
+  }
+
+  .voice {
+    .el-table {
+      .cell {
+        color: #55596F;
+      }
+      .el-table__header-wrapper {
+        .cell {
+          color: #333952;
+          font-weight: bold;
+        }
+      }
+    }
+    .el-radio-button__orig-radio:checked+.el-radio-button__inner {
+      color: @color-theme;
+      background: #fff;
+      border-color: @color-theme;
+    }
+    .el-radio-button--mini .el-radio-button__inner {
+      padding: 0;
+      width: 80px;
+      height: 26px;
+      line-height: 26px;
+      color: #9DA6B4;
+    }
+  }
+
+  .bench-marking {
+    .el-table--enable-row-hover .el-table__body tr:hover > td {
+      background: none;
+    }
+    .el-table {
+      .cell {
+        color: #57658F;
+      }
+      .el-table__header-wrapper {
+        th {
+          background: #fafafa;
+        }
+      }
+    }
+  }
+
+  .track {
+    .el-table {
+      .cell {
+        color: #57658F;
+      }
+      .el-table__header-wrapper {
+        th {
+          background: #fafafa;
+        }
+      }
+    }
+  }
+}
